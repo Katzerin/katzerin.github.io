@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 310" width="880" height="310">
+  <style>
+    text { font-family: "LXGW WenKai", "霞鹜文楷", "Kaiti SC", "STKaiti", "PingFang SC", cursive, sans-serif; }
+    .mono { font-family: "LXGW WenKai Mono", "SFMono-Regular", Menlo, Monaco, monospace; }
+  </style>
+  <path d="M 439.8 21.8 Q 439.5 154.9 440.0 287.9" fill="none" stroke="#9E978E" stroke-width="1.00" stroke-linecap="round" stroke-dasharray="5,5"/>
+  <text x="30.0" y="34.0" font-size="16.5" fill="#2B2926" font-weight="600" text-anchor="start">最大熵原理</text>
+  <text x="30.0" y="56.0" font-size="12.5" fill="#6B655D" font-weight="400" text-anchor="start">满足已知约束，对未知部分尽量均匀，不引入额外假设</text>
+  <path d="M 58.1 206.0 Q 222.9 205.7 388.0 206.0" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <rect x="84.0" y="178.0" width="36.0" height="28.0" rx="3" fill="#2B2926" fill-opacity="0.08" stroke="none"/>
+  <path d="M 84.1 177.8 Q 101.4 178.2 119.8 178.0" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 83.8 177.6 Q 101.2 177.8 119.9 178.3" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 119.7 177.8 Q 120.1 191.5 120.3 206.1" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 120.3 177.7 Q 120.2 192.1 120.2 206.3" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 119.9 206.1 Q 101.6 206.4 83.9 205.8" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 119.8 205.8 Q 103.0 205.4 84.0 205.7" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 84.0 205.7 Q 83.2 191.7 84.3 177.8" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 84.2 206.3 Q 84.0 193.0 84.4 178.1" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <rect x="142.0" y="164.0" width="36.0" height="42.0" rx="3" fill="#2B2926" fill-opacity="0.08" stroke="none"/>
+  <path d="M 141.9 164.2 Q 160.1 164.1 178.0 164.1" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 142.0 164.4 Q 159.3 163.1 177.9 163.8" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 177.8 163.9 Q 177.8 185.9 178.1 205.9" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 178.3 163.7 Q 177.9 184.4 177.7 205.9" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 178.2 206.0 Q 160.5 206.5 141.8 206.0" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 178.2 206.0 Q 160.5 205.9 142.0 206.3" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 142.0 206.3 Q 141.8 185.0 142.2 163.9" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 141.7 205.9 Q 141.9 184.7 142.1 163.9" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <rect x="200.0" y="148.0" width="36.0" height="58.0" rx="3" fill="#2B2926" fill-opacity="0.08" stroke="none"/>
+  <path d="M 200.2 148.1 Q 218.0 147.4 235.7 147.9" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 200.1 147.6 Q 218.4 148.8 236.0 147.6" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 236.1 147.9 Q 235.3 176.5 235.8 206.0" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 236.2 147.6 Q 236.5 176.5 236.0 205.6" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 236.2 206.2 Q 218.4 205.5 199.9 205.7" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 236.0 206.3 Q 217.2 207.0 200.3 205.8" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 200.0 205.9 Q 200.3 177.1 200.0 148.3" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 199.9 205.9 Q 200.5 177.0 200.0 148.1" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <rect x="258.0" y="130.0" width="36.0" height="76.0" rx="3" fill="#2B2926" fill-opacity="0.08" stroke="none"/>
+  <path d="M 258.2 129.8 Q 276.2 130.5 294.1 130.1" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 258.4 130.1 Q 275.9 130.6 293.8 129.7" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 294.0 130.3 Q 294.2 167.5 294.2 205.8" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 293.7 129.7 Q 293.4 168.2 293.8 206.0" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 293.8 206.0 Q 276.0 205.5 257.8 205.9" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 293.6 206.3 Q 276.9 207.0 258.1 206.4" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 258.0 206.0 Q 258.4 167.7 258.1 130.0" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 258.1 206.1 Q 258.1 168.7 258.3 129.9" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <rect x="316.0" y="112.0" width="36.0" height="94.0" rx="3" fill="#2B2926" fill-opacity="0.08" stroke="none"/>
+  <path d="M 316.0 111.9 Q 333.6 111.3 352.2 112.0" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 316.1 112.3 Q 333.2 111.8 352.2 111.7" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 352.1 112.0 Q 352.4 159.2 352.3 206.0" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 352.1 112.2 Q 352.0 160.0 352.2 206.3" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 351.9 205.8 Q 334.4 205.6 316.1 206.2" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 352.3 206.1 Q 334.9 205.7 315.7 206.2" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 316.2 205.9 Q 316.9 158.2 316.1 111.8" fill="none" stroke="#2B2926" stroke-width="1.30" stroke-linecap="round"/>
+  <path d="M 315.7 206.0 Q 316.6 159.3 316.3 112.1" fill="none" stroke="#2B2926" stroke-width="0.85" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 218.3 101.7 Q 180.2 109.4 143.3 118.1" fill="none" stroke="#6B655D" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 147.8 114.5 L 143.0 118.0 L 148.9 119.2" fill="none" stroke="#6B655D" stroke-width="1.20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 258.0 102.2 Q 295.1 96.5 332.8 91.8" fill="none" stroke="#6B655D" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 327.9 95.1 L 333.0 92.0 L 327.2 90.3" fill="none" stroke="#6B655D" stroke-width="1.20" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="238.0" y="96.0" font-size="12" fill="#6B655D" font-weight="500" text-anchor="middle">尽量展平</text>
+  <text x="220.0" y="240.0" font-size="13" fill="#2B2926" font-weight="600" text-anchor="middle">线性约束 + 最大熵  ⇒  指数族 / Softmax</text>
+  <text x="220.0" y="266.0" font-size="12.5" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">p_i = exp(z_i) / Σ exp(z_j)</text>
+  <text x="472.0" y="34.0" font-size="16.5" fill="#2A6F7F" font-weight="600" text-anchor="start">最小熵原理</text>
+  <text x="472.0" y="56.0" font-size="12.5" fill="#6B655D" font-weight="400" text-anchor="start">从数据中提取规律，让条件分布收敛为清晰尖峰</text>
+  <path d="M 500.0 206.1 Q 665.3 205.6 830.0 206.0" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <rect x="526.0" y="196.0" width="36.0" height="10.0" rx="3" fill="#9E978E" fill-opacity="0.08" stroke="none"/>
+  <path d="M 526.2 196.1 Q 543.3 195.3 562.0 195.9" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 562.0 196.1 Q 562.6 201.0 561.9 206.1" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 562.2 205.8 Q 543.6 206.7 526.0 206.1" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 525.8 205.8 Q 525.1 200.5 526.1 196.0" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <rect x="584.0" y="192.0" width="36.0" height="14.0" rx="3" fill="#9E978E" fill-opacity="0.08" stroke="none"/>
+  <path d="M 583.9 192.2 Q 602.1 192.9 619.9 192.0" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 620.0 192.0 Q 619.5 198.4 620.0 206.2" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 619.8 206.0 Q 601.8 205.2 584.0 206.3" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 584.1 206.2 Q 583.7 198.1 584.1 192.1" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <rect x="642.0" y="94.0" width="36.0" height="112.0" rx="3" fill="#2A6F7F" fill-opacity="0.16" stroke="none"/>
+  <path d="M 641.7 94.2 Q 660.1 94.2 678.2 94.3" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 641.9 94.1 Q 659.0 93.9 678.0 94.0" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 677.9 93.8 Q 678.7 149.3 677.9 206.0" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 678.2 94.0 Q 677.7 149.2 678.4 205.7" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 678.1 206.0 Q 660.0 206.8 642.3 206.1" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 677.8 206.0 Q 660.9 206.2 642.0 206.2" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 641.9 205.8 Q 642.4 150.2 641.9 94.1" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 642.0 206.2 Q 641.9 150.1 642.4 94.1" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <rect x="700.0" y="194.0" width="36.0" height="12.0" rx="3" fill="#9E978E" fill-opacity="0.08" stroke="none"/>
+  <path d="M 699.8 193.8 Q 718.8 193.5 736.2 193.9" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 736.2 193.9 Q 736.4 200.7 736.0 206.1" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 736.1 205.7 Q 717.3 206.6 699.8 205.9" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 700.0 206.1 Q 700.4 199.3 699.9 194.2" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <rect x="758.0" y="198.0" width="36.0" height="8.0" rx="3" fill="#9E978E" fill-opacity="0.08" stroke="none"/>
+  <path d="M 757.9 197.9 Q 775.5 198.3 794.1 197.7" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 793.8 197.8 Q 794.2 201.3 794.2 205.9" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 794.1 206.2 Q 776.7 206.1 758.2 206.0" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 758.1 206.1 Q 757.4 201.6 758.2 198.2" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 585.8 132.2 Q 611.4 127.3 637.9 121.9" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 633.1 125.4 L 638.0 122.0 L 632.2 120.6" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 739.8 132.0 Q 714.8 127.6 688.3 122.1" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 693.8 120.6 L 688.0 122.0 L 692.9 125.4" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="662.0" y="84.0" font-size="12" fill="#2A6F7F" font-weight="600" text-anchor="middle">收敛聚焦</text>
+  <text x="662.0" y="240.0" font-size="13" fill="#2B2926" font-weight="600" text-anchor="middle">无监督分词 · 文本聚类 · 模型压缩</text>
+  <text x="662.0" y="266.0" font-size="12.5" fill="#2A6F7F" font-weight="400" text-anchor="middle" class="mono">min H(Y | X)  ⇒  结构越清晰，熵越低</text>
+</svg>

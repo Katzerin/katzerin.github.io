@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320">
+  <style>
+    text { font-family: "LXGW WenKai", "霞鹜文楷", "Kaiti SC", "STKaiti", "PingFang SC", cursive, sans-serif; }
+    .mono { font-family: "LXGW WenKai Mono", "SFMono-Regular", Menlo, Monaco, monospace; }
+  </style>
+  <text x="28.0" y="34.0" font-size="17" fill="#2B2926" font-weight="600" text-anchor="start">交叉熵的拆解：H(p, q) = H(p) + D_KL(p ‖ q)</text>
+  <text x="28.0" y="56.0" font-size="12.5" fill="#6B655D" font-weight="400" text-anchor="start">真实分布 p = [1/2, 1/4, 1/8, 1/8]，按不同模型 q 编码的平均开销（bit）</text>
+  <path d="M 531.4 82.1 Q 531.1 178.4 531.6 273.9" fill="none" stroke="#9E978E" stroke-width="1.20" stroke-linecap="round" stroke-dasharray="4,4"/>
+  <text x="531.5" y="294.0" font-size="12.5" fill="#6B655D" font-weight="500" text-anchor="middle">真实分布的熵 H(p) = 1.75 bit</text>
+  <text x="204.0" y="108.0" font-size="14.5" fill="#2B2926" font-weight="600" text-anchor="end">理想模型 q = p</text>
+  <text x="204.0" y="126.0" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="end">晴1 云2 雨3 雪3</text>
+  <rect x="220.0" y="90.0" width="311.5" height="34.0" rx="3" fill="#2B2926" fill-opacity="0.06" stroke="none"/>
+  <path d="M 219.9 90.2 Q 375.8 89.8 531.7 89.9" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 220.1 89.7 Q 375.8 90.4 531.4 90.0" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.6 89.9 Q 532.3 107.6 531.7 123.8" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 531.6 90.2 Q 531.2 106.3 531.7 124.3" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.4 124.3 Q 376.1 124.3 220.3 124.1" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 531.8 124.2 Q 376.8 124.8 220.3 124.2" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 219.9 124.1 Q 219.3 107.6 220.2 90.0" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 220.3 124.3 Q 219.5 107.1 220.4 90.3" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <text x="375.8" y="112.0" font-size="13" fill="#2B2926" font-weight="600" text-anchor="middle" class="mono">H(p) = 1.75</text>
+  <text x="543.5" y="112.0" font-size="12.5" fill="#6B655D" font-weight="500" text-anchor="start">1.75 bit（下界）</text>
+  <text x="204.0" y="170.0" font-size="14.5" fill="#2B2926" font-weight="600" text-anchor="end">均匀假设 q_unif</text>
+  <text x="204.0" y="188.0" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="end">全员 2 bit</text>
+  <rect x="220.0" y="152.0" width="311.5" height="34.0" rx="3" fill="#2B2926" fill-opacity="0.06" stroke="none"/>
+  <path d="M 219.8 152.2 Q 376.3 152.0 531.2 152.3" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 219.7 152.2 Q 376.0 151.4 531.1 151.9" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.4 152.1 Q 530.8 168.3 531.2 186.2" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 531.7 151.6 Q 531.8 168.5 531.3 186.0" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.2 186.3 Q 376.4 186.3 219.8 185.8" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 531.4 185.8 Q 375.9 185.1 220.0 185.9" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 220.0 186.1 Q 219.9 168.7 220.0 152.0" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 219.6 186.0 Q 219.6 168.8 220.0 151.7" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <text x="375.8" y="174.0" font-size="13" fill="#2B2926" font-weight="600" text-anchor="middle" class="mono">H(p) = 1.75</text>
+  <rect x="531.5" y="152.0" width="44.5" height="34.0" rx="3" fill="#2A6F7F" fill-opacity="0.18" stroke="none"/>
+  <path d="M 531.5 152.1 Q 553.4 152.1 575.9 152.2" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 531.4 151.8 Q 553.0 152.9 575.9 152.4" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 576.3 152.0 Q 576.4 169.8 576.2 185.7" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 575.9 152.1 Q 576.7 168.5 576.0 186.0" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 576.2 185.7 Q 553.4 185.8 531.2 186.1" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 575.8 185.6 Q 552.9 185.5 531.4 186.4" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.8 186.2 Q 532.2 168.2 531.7 151.8" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 531.7 186.2 Q 531.1 168.3 531.3 152.4" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <text x="588.0" y="174.0" font-size="12.5" fill="#2A6F7F" font-weight="600" text-anchor="start">2.00 bit（KL = 0.25）</text>
+  <text x="204.0" y="232.0" font-size="14.5" fill="#2B2926" font-weight="600" text-anchor="end">错误假设 q_bad</text>
+  <text x="204.0" y="250.0" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="end">晴3 云2 雨3 雪1</text>
+  <rect x="220.0" y="214.0" width="311.5" height="34.0" rx="3" fill="#2B2926" fill-opacity="0.06" stroke="none"/>
+  <path d="M 220.0 214.2 Q 376.2 214.4 531.5 214.2" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 219.6 213.8 Q 376.6 213.1 531.9 213.9" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.5 214.0 Q 531.3 231.1 531.7 248.0" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 531.7 214.0 Q 532.1 230.2 531.5 247.7" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.6 248.0 Q 376.4 247.3 219.7 248.3" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 531.2 248.4 Q 376.3 247.2 220.0 248.1" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 219.8 247.9 Q 219.9 230.1 219.8 213.9" fill="none" stroke="#2B2926" stroke-width="1.40" stroke-linecap="round"/>
+  <path d="M 219.6 248.1 Q 219.8 231.6 219.8 214.1" fill="none" stroke="#2B2926" stroke-width="0.91" stroke-linecap="round" opacity="0.45"/>
+  <text x="375.8" y="236.0" font-size="13" fill="#2B2926" font-weight="600" text-anchor="middle" class="mono">H(p) = 1.75</text>
+  <rect x="531.5" y="214.0" width="133.5" height="34.0" rx="3" fill="#2A6F7F" fill-opacity="0.18" stroke="none"/>
+  <path d="M 531.6 213.8 Q 598.0 213.2 665.2 213.9" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 531.6 214.4 Q 597.4 214.2 664.8 213.7" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 665.1 214.0 Q 665.8 230.6 665.3 248.1" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 665.2 214.0 Q 665.7 230.3 665.2 248.1" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 665.1 247.8 Q 597.6 247.8 531.4 247.9" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 665.4 248.1 Q 598.2 248.8 531.6 248.4" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <path d="M 531.2 247.9 Q 532.2 231.1 531.4 214.1" fill="none" stroke="#2A6F7F" stroke-width="1.50" stroke-linecap="round"/>
+  <path d="M 531.6 247.9 Q 531.3 230.2 531.5 214.3" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.45"/>
+  <text x="598.2" y="236.0" font-size="12.5" fill="#2A6F7F" font-weight="600" text-anchor="middle" class="mono">+0.75</text>
+  <text x="677.0" y="236.0" font-size="12.5" fill="#2A6F7F" font-weight="600" text-anchor="start">2.50 bit（KL = 0.75）</text>
+  <rect x="650.0" y="20.0" width="14.0" height="14.0" rx="3" fill="#2B2926" fill-opacity="0.07" stroke="none"/>
+  <path d="M 650.0 20.1 Q 657.6 19.3 663.8 19.9" fill="none" stroke="#2B2926" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 664.1 20.0 Q 664.5 27.8 664.1 34.2" fill="none" stroke="#2B2926" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 664.1 34.2 Q 656.3 33.2 650.2 33.8" fill="none" stroke="#2B2926" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 649.9 33.8 Q 649.7 27.5 650.0 20.1" fill="none" stroke="#2B2926" stroke-width="1.20" stroke-linecap="round"/>
+  <text x="670.0" y="32.0" font-size="12" fill="#6B655D" font-weight="400" text-anchor="start">固有熵 H(p)</text>
+  <rect x="760.0" y="20.0" width="14.0" height="14.0" rx="3" fill="#2A6F7F" fill-opacity="0.18" stroke="none"/>
+  <path d="M 760.0 20.0 Q 766.6 20.4 773.9 20.3" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 773.9 20.0 Q 773.2 26.7 773.9 34.2" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 774.0 34.1 Q 766.6 34.6 760.2 34.0" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round"/>
+  <path d="M 759.7 33.7 Q 759.2 26.9 759.8 19.8" fill="none" stroke="#2A6F7F" stroke-width="1.20" stroke-linecap="round"/>
+  <text x="780.0" y="32.0" font-size="12" fill="#6B655D" font-weight="400" text-anchor="start">额外开销 KL</text>
+</svg>

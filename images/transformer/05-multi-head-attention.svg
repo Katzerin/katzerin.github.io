@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350" width="900" height="350">
+  <style>
+    text { font-family: "LXGW WenKai", "霞鹜文楷", "Kaiti SC", "STKaiti", "PingFang SC", cursive, sans-serif; }
+    .mono { font-family: "LXGW WenKai Mono", "SFMono-Regular", Menlo, Monaco, monospace; }
+  </style>
+  <path d="M 24.2 118.0 Q 75.1 118.7 125.5 117.8" fill="none" stroke="#2A6F7F" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 25.3 117.3 Q 75.5 116.8 125.2 118.8" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 124.0 116.9 Q 123.2 156.4 124.1 195.6" fill="none" stroke="#2A6F7F" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 124.7 117.5 Q 124.1 155.7 124.8 194.6" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 125.1 194.3 Q 75.6 192.9 24.8 194.3" fill="none" stroke="#2A6F7F" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 125.8 193.8 Q 75.7 195.4 24.7 194.0" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 26.1 195.8 Q 27.3 156.0 26.2 116.9" fill="none" stroke="#2A6F7F" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 25.9 195.0 Q 25.7 155.5 25.6 115.9" fill="none" stroke="#2A6F7F" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <text x="75" y="148" font-size="14" fill="#2A6F7F" font-weight="600" text-anchor="middle">完整输入 X</text>
+  <text x="75" y="174" font-size="13" fill="#6B655D" font-weight="500" text-anchor="middle" class="mono">4 × 512</text>
+  <path d="M 128.0 156.0 Q 166.0 58.0 206.0 58.0" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 199.6 60.9 L 206.0 58.0 L 199.6 55.1" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="234" y="63" font-size="13.5" fill="#B85D3B" font-weight="600" text-anchor="middle">头 1</text>
+  <path d="M 260.5 37.9 Q 329.1 36.8 397.7 38.2" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 395.7 36.8 Q 396.2 58.1 395.9 79.6" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 397.5 77.9 Q 329.2 79.1 261.0 77.8" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 261.8 79.7 Q 261.7 57.8 261.7 36.3" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="329" y="55" font-size="11.5" fill="#B85D3B" font-weight="600" text-anchor="middle" class="mono">Wq1, Wk1, Wv1</text>
+  <text x="329" y="72" font-size="11" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">各 512×64</text>
+  <path d="M 398.7 58.2 Q 413.4 57.8 427.8 57.8" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 422.5 60.4 L 428.0 58.0 L 422.5 55.6" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 431.0 38.0 Q 495.4 36.1 559.7 38.3" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 558.1 36.9 Q 557.9 58.0 558.0 79.4" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 559.1 77.8 Q 495.1 80.1 430.8 78.1" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 432.2 79.5 Q 432.9 58.4 431.9 36.5" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="495" y="55" font-size="13" fill="#2B2926" font-weight="500" text-anchor="middle">Attention</text>
+  <text x="495" y="72" font-size="11" fill="#B85D3B" font-weight="500" text-anchor="middle" class="mono">head_1 (4×64)</text>
+  <path d="M 562.0 58.0 Q 594.0 58.0 622.0 156.0" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 617.5 150.6 L 622.0 156.0 L 623.0 149.1" fill="none" stroke="#B85D3B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 128.0 156.0 Q 166.0 150.0 206.0 150.0" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 199.6 152.9 L 206.0 150.0 L 199.6 147.1" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="234" y="155" font-size="13.5" fill="#547A4B" font-weight="600" text-anchor="middle">头 2</text>
+  <path d="M 260.7 129.7 Q 328.8 128.2 397.2 130.3" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 395.8 129.0 Q 395.0 150.2 396.4 171.0" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 397.5 169.9 Q 328.8 172.2 260.9 170.0" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 261.6 171.5 Q 262.7 149.6 261.7 128.9" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="329" y="147" font-size="11.5" fill="#547A4B" font-weight="600" text-anchor="middle" class="mono">Wq2, Wk2, Wv2</text>
+  <text x="329" y="164" font-size="11" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">各 512×64</text>
+  <path d="M 399.2 149.9 Q 413.1 149.3 427.9 150.1" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 422.5 152.4 L 428.0 150.0 L 422.5 147.6" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 430.6 130.2 Q 495.3 128.0 559.6 130.0" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 558.4 128.8 Q 558.9 149.5 558.2 171.5" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 559.5 170.3 Q 495.3 168.5 430.3 169.6" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 431.9 171.8 Q 431.7 150.0 431.8 128.6" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="495" y="147" font-size="13" fill="#2B2926" font-weight="500" text-anchor="middle">Attention</text>
+  <text x="495" y="164" font-size="11" fill="#547A4B" font-weight="500" text-anchor="middle" class="mono">head_2 (4×64)</text>
+  <path d="M 562.0 150.0 Q 594.0 150.0 622.0 156.0" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 615.2 157.5 L 622.0 156.0 L 616.3 151.9" fill="none" stroke="#547A4B" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 128.0 156.0 Q 166.0 260.0 206.0 260.0" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 199.6 262.9 L 206.0 260.0 L 199.6 257.1" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="234" y="265" font-size="13.5" fill="#78577A" font-weight="600" text-anchor="middle">头 8</text>
+  <path d="M 260.7 240.3 Q 329.0 238.0 397.4 240.2" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 396.3 238.4 Q 395.3 259.8 396.0 281.8" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 397.4 280.3 Q 328.9 278.8 260.3 280.1" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 262.2 281.3 Q 261.0 260.4 262.0 238.6" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="329" y="257" font-size="11.5" fill="#78577A" font-weight="600" text-anchor="middle" class="mono">Wq8, Wk8, Wv8</text>
+  <text x="329" y="274" font-size="11" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">各 512×64</text>
+  <path d="M 399.1 260.2 Q 413.7 260.6 428.3 260.3" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 422.5 262.4 L 428.0 260.0 L 422.5 257.6" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 430.6 239.9 Q 495.6 237.9 559.1 240.4" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 557.9 238.3 Q 558.0 259.7 557.8 281.1" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 559.5 280.2 Q 494.7 278.7 430.3 279.6" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 432.3 281.3 Q 430.9 260.0 432.0 238.4" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <text x="495" y="257" font-size="13" fill="#2B2926" font-weight="500" text-anchor="middle">Attention</text>
+  <text x="495" y="274" font-size="11" fill="#78577A" font-weight="500" text-anchor="middle" class="mono">head_8 (4×64)</text>
+  <path d="M 562.0 260.0 Q 594.0 260.0 622.0 156.0" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 623.1 162.9 L 622.0 156.0 L 617.6 161.4" fill="none" stroke="#78577A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="408" y="208" font-size="12.5" fill="#948C82" font-weight="400" text-anchor="middle">⋮   头 3 ～ 头 7 并行计算（共 8 组独立权重）   ⋮</text>
+  <path d="M 624.8 114.3 Q 674.5 114.8 723.4 114.0" fill="none" stroke="#9E7A36" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 624.7 114.1 Q 673.6 113.0 723.5 113.8" fill="none" stroke="#9E7A36" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 721.9 112.5 Q 720.6 155.9 722.1 199.2" fill="none" stroke="#9E7A36" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 722.3 113.5 Q 723.0 155.7 721.7 199.6" fill="none" stroke="#9E7A36" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 723.1 197.9 Q 673.6 198.7 624.3 198.2" fill="none" stroke="#9E7A36" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 723.2 197.9 Q 673.8 197.4 625.2 198.4" fill="none" stroke="#9E7A36" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 625.9 199.6 Q 625.4 156.2 625.7 112.7" fill="none" stroke="#9E7A36" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 625.6 199.4 Q 626.6 155.4 625.3 111.8" fill="none" stroke="#9E7A36" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <text x="674" y="144" font-size="14.5" fill="#9E7A36" font-weight="600" text-anchor="middle">Concat</text>
+  <text x="674" y="166" font-size="12" fill="#6B655D" font-weight="400" text-anchor="middle">特征维拼接</text>
+  <text x="674" y="186" font-size="12" fill="#2B2926" font-weight="500" text-anchor="middle" class="mono">4 × 512</text>
+  <path d="M 726.0 155.7 Q 741.1 156.2 755.7 156.0" fill="none" stroke="#2B2926" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 749.6 158.9 L 756.0 156.0 L 749.6 153.1" fill="none" stroke="#2B2926" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 758.7 114.2 Q 817.4 113.2 875.4 113.7" fill="none" stroke="#547A4B" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 759.2 114.6 Q 817.1 114.5 874.9 113.3" fill="none" stroke="#547A4B" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 874.0 112.6 Q 873.4 156.5 873.8 199.7" fill="none" stroke="#547A4B" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 874.2 112.4 Q 874.3 155.8 874.2 200.1" fill="none" stroke="#547A4B" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 875.6 198.2 Q 817.0 199.6 758.9 197.6" fill="none" stroke="#547A4B" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 876.0 198.1 Q 817.3 196.6 757.7 197.8" fill="none" stroke="#547A4B" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 760.0 199.5 Q 761.5 156.5 760.1 112.6" fill="none" stroke="#547A4B" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 759.5 199.6 Q 759.8 155.5 760.4 113.5" fill="none" stroke="#547A4B" stroke-width="0.98" stroke-linecap="round" opacity="0.55"/>
+  <text x="817" y="144" font-size="15" fill="#547A4B" font-weight="600" text-anchor="middle" class="mono">× Wᴼ</text>
+  <text x="817" y="166" font-size="12" fill="#6B655D" font-weight="400" text-anchor="middle">词内融合 8 头</text>
+  <text x="817" y="186" font-size="12" fill="#2B2926" font-weight="500" text-anchor="middle" class="mono">输出 4×512</text>
+  <text x="450" y="326" font-size="13.5" fill="#2B2926" font-weight="500" text-anchor="middle">AV 负责「词间汇总」  ·  Concat 负责「特征拼接」  ·  Wᴼ 负责「词内多头融合」</text>
+</svg>

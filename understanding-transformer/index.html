@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>理解 Transformer：从矩阵运算看注意力与解码 | Katzes Blog</title>
+  <meta name="description" content="以「我喝红茶 → I drink black tea」为例，从序列建模的计算瓶颈出发，梳理自注意力、多头投影、前馈层与解码器机制。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解 Transformer：从矩阵运算看注意力与解码">
+<meta property="og:url" content="https://katzerin.github.io/understanding-transformer/">
+<meta property="og:site_name" content="Katzes Blog">
+<meta property="og:description" content="以「我喝红茶 → I drink black tea」为例，从序列建模的计算瓶颈出发，梳理自注意力、多头投影、前馈层与解码器机制。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Katze">
+<meta name="twitter:card" content="summary">
+  <link rel="icon" href="/images/logo.svg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-gb-web@latest/lxgwwenkaigb-regular/result.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-gb-web@latest/lxgwwenkaigb-medium/result.css">
+  <link rel="stylesheet" href="/css/style.css?v=20260814-3">
+  <link rel="stylesheet" href="/css/math.css">
+  <style>
+    .post-content img[src$=".svg"] {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.5em auto;
+    }
+    :root[data-theme="dark"] .post-content img[src$=".svg"] {
+      filter: invert(0.88) hue-rotate(180deg);
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('warmpaper-theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/"><img class="site-logo" src="/images/logo.svg" alt="Logo">Katzes Blog</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <nav class="site-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/archives">Archive</a>
+        <a class="nav-link" href="/musik">Musik</a>
+        <a class="nav-link" href="/about">About</a>
+      <button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题" data-theme-state="light">
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+    <main class="main-content">
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">理解 Transformer：从矩阵运算看注意力与解码</h1>
+  </header>
+
+  <div class="post-body-wrapper">
+    <div class="post-content">
+<p>考虑一个简单的中英翻译样本：源序列「我 / 喝 / 红 / 茶」（\(n=4\)），目标序列 <code>I drink black tea</code>（右移补起始符后为 <code>&lt;BOS&gt; I drink black tea</code>，\(m=5\)）。下文沿用 512 维词向量与 8 头注意力的经典配置，顺着这组张量的变换，把 Transformer 的核心结构理一遍。</p>
+
+<hr>
+
+<h2>从序列递推到矩阵计算</h2>
+
+<p>在 Transformer 之前，序列转导任务主要依赖 RNN 及其变体。RNN 按时间步递推隐藏状态 \(h_t = g(x_t W + h_{t-1} U)\)：计算「茶」时必须等待「红」的状态就绪，单条样本内部无法并行；同时，序列越长，早期 token 的信息经过多步非线性传递后越容易衰减，即使在解码端反复注入上下文向量，也无法恢复编码阶段已经丢失的远距离信息。</p>
+
+<p><img src="/images/transformer/01-rnn-vs-transformer.svg" alt="RNN 串行与 Transformer 并行"></p>
+
+<p>换个视角看待输入序列：4 个字经词嵌入后排成一个矩阵 \(X \in \mathbb{R}^{4 \times 512}\)，行对应 token，列对应特征维度。如果不沿时间步递推，而直接对整个矩阵做变换，最基础的操作只有两类：</p>
+
+<ul>
+<li><strong>沿行混合（Token 之间）</strong>：用 \(n \times n\) 矩阵左乘 \(X\)，让每个位置聚合其他位置的上下文信息。</li>
+<li><strong>沿列混合（特征之间）</strong>：用 \(d \times d\) 矩阵右乘 \(X\)，在每个位置内部对 512 维特征做非线性重组。</li>
+</ul>
+
+<p>Transformer 的每一层，都在交替完成这两件事。</p>
+
+<p><img src="/images/transformer/02-transformer-architecture.svg" alt="Transformer 整体架构"></p>
+
+<hr>
+
+<h2>自注意力</h2>
+
+<p>静态词嵌入无法处理多义词。脱离语境时，「红」通常指向颜色 <code>red</code>（如「红花」）；但在「我喝红茶」里，受后面「茶」的约束，它应当对应 <code>black</code>。自注意力的作用，就是根据整句语境动态计算每个词之间的相关度，把「红」的表示拉向「红茶」对应的语义区域。</p>
+
+<p><img src="/images/transformer/03-semantic-shift.svg" alt="自注意力的语义偏移"></p>
+
+<p>计算上，将输入矩阵 \(X\) 分别经三组可学习权重投影为查询 \(Q = X W_Q\)、键 \(K = X W_K\) 和值 \(V = X W_V\)。用 \(Q K^\top\) 衡量任意两位置的匹配程度，按行做 Softmax 得到权重矩阵 \(A\)，再乘以 \(V\)：</p>
+
+<p>\[\operatorname{Attention}(Q, K, V) = \operatorname{softmax}_{\text{row}}\left(\frac{Q K^\top}{\sqrt{d_k}}\right) V\]</p>
+
+<p><img src="/images/transformer/04-scaled-dot-product-attention.svg" alt="缩放点积注意力"></p>
+
+<p>单独展开「红」这一行，矩阵乘法 \(A V\) 恰好是 \(V\) 中四个行向量的凸组合：</p>
+
+<p>\[z_{\text{红}} = 0.08\, v_{\text{我}} + 0.03\, v_{\text{喝}} + 0.34\, v_{\text{红}} + 0.55\, v_{\text{茶}}\]</p>
+
+<p>实际构造这个算子时，有三处关键设计：</p>
+
+<ol>
+<li><strong>缩放因子 \(\frac{1}{\sqrt{d_k}}\)</strong>：若 \(q, k\) 各分量独立且满足零均值、单位方差，\(d_k\) 维点积的方差为 \(d_k\)。维度较大时，点积幅值会把 Softmax 推向梯度趋近于零的饱和区，除以 \(\sqrt{d_k}\) 可以将方差拉回 \(1\)。注意 \(d_k\) 指的是参与点积的投影维度——在 8 头配置下每头为 64 维，因此除以 \(\sqrt{64} = 8\)，而非 \(512\)。</li>
+<li><strong>位置编码（Positional Encoding）</strong>：点积注意力对输入行是置换等变的，调换「我喝红茶」的词序不会改变两两匹配关系。因此需要在输入嵌入上逐元素叠加位置向量 \(PE(p)\)。经典做法采用不同频率的 \(\sin/\cos\) 对，使得固定位置偏移 \(PE(p+k)\) 可表示为 \(PE(p)\) 的线性变换，为相对位置建模提供结构基础。</li>
+<li><strong>多头注意力与输出投影 \(W^O\)</strong>：单组注意力权重在同一位置上只能做一次加权平均，很难兼顾语法依赖、习惯搭配（「红」与「茶」）和远距离指代。多头机制并非把 512 维机械切段，而是让 8 组独立投影从完整的 \(4 \times 512\) 输入分别映射到 64 维子空间，并行算出 8 个 \(4 \times 64\) 的结果，沿特征维横向拼接（\(\operatorname{Concat}\)）回 \(4 \times 512\)，再乘以 \(W^O \in \mathbb{R}^{512 \times 512}\) 完成跨头融合。总参数量与单头 512 维持平，但同时获得了 8 组独立的注意力分布。</li>
+</ol>
+
+<p><img src="/images/transformer/05-multi-head-attention.svg" alt="多头注意力"></p>
+
+<p>这三个算子的分工很清晰：\(A V\) 在 token 之间汇总信息；\(\operatorname{Concat}\) 仅在特征维并排拼接；\(W^O\) 在单个 token 内部融合不同头提取的特征，不混合不同词的行。</p>
+
+<hr>
+
+<h2>前馈层与多层堆叠</h2>
+
+<p>注意力层输出的本质仍是 \(V\) 的线性加权和。为了增强单个位置上的非线性表达能力，每个 token 随后独立经过同一个两层前馈网络（FFN）：</p>
+
+<p>\[\operatorname{FFN}(H) = \operatorname{ReLU}(H W_1 + b_1) W_2 + b_2\]</p>
+
+<p>隐藏维先由 \(512\) 扩展至 \(2048\)，经逐元素非线性后再投影回 \(512\)。扩维本身不增加原始输入信息，但它构造出更丰富的特征组合供激活函数筛选；这里采用逐元素激活（如 ReLU 或后续常见的 GELU / SwiGLU）而非 Softmax，是因为前馈层需要允许多个特征通道同时强烈响应，而不是在维度间引入总和为 1 的零和竞争。</p>
+
+<p>将「多头自注意力 + FFN」封装为单层编码器并串联堆叠 6 层（各层权重独立），最终得到的 \(4 \times 512\) 矩阵即编码器输出（Memory），完整保留了源句四个位置融合上下文后的表示。</p>
+
+<hr>
+
+<h2>解码、掩码与跨语言对齐</h2>
+
+<p>生成译文时，推理与训练的数据流并不相同。推理阶段没有参考答案，只能从 <code>&lt;BOS&gt;</code> 出发，自回归地每步生成一个词并追加到前缀末尾，直到输出 <code>&lt;EOS&gt;</code>；而训练阶段已知完整目标句，通过 <strong>Teacher Forcing</strong> 将目标句右移一位（<code>&lt;BOS&gt; I drink black tea</code>，共 5 个位置）一次性送入解码器，并行预测每个位置的下一个词（<code>I drink black tea &lt;EOS&gt;</code>）。</p>
+
+<p>解码器每一层包含两类注意力，分别处理目标侧前文与源语言信息：</p>
+
+<p><img src="/images/transformer/07-decoder-mask-and-cross-attn.svg" alt="解码器的掩码与交叉注意力"></p>
+
+<ol>
+<li><strong>因果掩码自注意力（Masked Self-Attention）</strong>：训练时 5 个位置同步前向计算，但位置 \(i\) 不能看到 \(j &gt; i\) 的未来词（例如输入 <code>drink</code> 预测 <code>black</code> 时不能泄露 <code>black</code>）。在 \(5 \times 5\) 的打分矩阵上三角叠加 \(-\infty\)，经 Softmax 后未来位置权重严格归零，从而在单次矩阵运算内保持严格的因果约束。</li>
+<li><strong>交叉注意力（Cross-Attention）</strong>：查询 \(Q\) 来自解码器上一子层的输出（5 行），键 \(K\) 和值 \(V\) 来自编码器最终输出的 Memory（4 行），且使用独立训练的投影权重。得到的注意力矩阵形状为 \(5 \times 4\)——在 <code>drink</code> 位置准备预测 <code>black</code> 时，即可从源句的「红」与「茶」中提取组合语义。源句完整已知，因此交叉注意力不需要因果掩码。</li>
+</ol>
+
+<p>解码器同样堆叠 6 层，最终输出的 \(5 \times 512\) 矩阵经线性层投影到词表维度 \(S\) 得到 logits，再沿词表维做 Softmax，即可输出每个位置对应的下一词概率分布。</p>
+    </div>
+  </div>
+
+  <footer class="post-footer">
+    <nav class="post-nav">
+        <a class="prev" href="/understanding-entropy/">&laquo; 理解熵：从编码长度到交叉熵与最大熵</a>
+        <a class="next" href="/2026/08/15/im-anfang-war-die-tat/">Im Anfang war die Tat &raquo;</a>
+    </nav>
+  </footer>
+</article>
+    </main>
+    <footer class="site-footer">
+  <div class="footer-inner">
+      <p>&copy; 2026 Katze</p>
+    <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &middot; Theme <a href="https://github.com/finch-xu/hexo-theme-warmpaper" target="_blank" rel="noopener">Warmpaper</a></p>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/main.js?v=20260814-2"></script>
+</body>
+</html>

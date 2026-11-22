@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 390" width="900" height="390">
+  <style>
+    text { font-family: "LXGW WenKai", "霞鹜文楷", "Kaiti SC", "STKaiti", "PingFang SC", cursive, sans-serif; }
+    .mono { font-family: "LXGW WenKai Mono", "SFMono-Regular", Menlo, Monaco, monospace; }
+  </style>
+  <path d="M 22.4 27.9 Q 70.4 27.1 117.6 28.2" fill="none" stroke="#2A6F7F" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 23.3 27.3 Q 69.3 28.2 117.7 27.7" fill="none" stroke="#2A6F7F" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 115.9 26.5 Q 117.0 51.1 116.1 75.5" fill="none" stroke="#2A6F7F" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 116.1 26.2 Q 115.5 51.0 115.4 75.5" fill="none" stroke="#2A6F7F" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 117.1 73.7 Q 69.4 75.5 22.6 73.9" fill="none" stroke="#2A6F7F" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 117.5 74.6 Q 69.4 73.5 21.9 74.4" fill="none" stroke="#2A6F7F" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 24.1 75.7 Q 25.0 51.1 24.4 26.3" fill="none" stroke="#2A6F7F" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 23.8 74.8 Q 23.7 50.4 23.4 26.8" fill="none" stroke="#2A6F7F" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <text x="70.0" y="48" font-size="13" fill="#2A6F7F" font-weight="600" text-anchor="middle">输入 X</text>
+  <text x="70.0" y="66" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">4×512</text>
+  <path d="M 119.7 51.2 Q 134.0 50.1 148.7 51.0" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 142.6 53.9 L 149.0 51.0 L 142.6 48.1" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 152.6 28.2 Q 214.2 29.5 275.2 28.3" fill="none" stroke="#B85D3B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 153.3 28.6 Q 214.3 27.6 275.4 28.0" fill="none" stroke="#B85D3B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 274.3 26.4 Q 274.7 50.4 274.0 75.4" fill="none" stroke="#B85D3B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 274.2 27.2 Q 273.1 51.1 274.2 75.1" fill="none" stroke="#B85D3B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 275.0 74.2 Q 214.2 75.9 152.4 73.7" fill="none" stroke="#B85D3B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 274.7 73.5 Q 213.8 72.7 152.1 73.5" fill="none" stroke="#B85D3B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 153.9 75.6 Q 153.7 51.2 154.0 26.9" fill="none" stroke="#B85D3B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 153.1 76.1 Q 154.3 51.3 153.6 25.9" fill="none" stroke="#B85D3B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <text x="214.0" y="48" font-size="13" fill="#B85D3B" font-weight="600" text-anchor="middle">投影 Q, K, V</text>
+  <text x="214.0" y="66" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">各 4×64</text>
+  <path d="M 278.0 50.9 Q 292.6 51.2 306.8 50.9" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 300.6 53.9 L 307.0 51.0 L 300.6 48.1" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 310.3 27.9 Q 366.7 29.8 423.6 28.3" fill="none" stroke="#A65353" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 310.7 27.9 Q 366.9 26.5 422.6 27.7" fill="none" stroke="#A65353" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 421.7 26.8 Q 420.9 50.6 421.8 75.5" fill="none" stroke="#A65353" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 421.9 25.9 Q 422.6 50.3 422.5 75.4" fill="none" stroke="#A65353" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 423.7 73.8 Q 366.7 72.9 310.8 74.2" fill="none" stroke="#A65353" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 423.8 74.0 Q 367.0 75.3 311.2 73.5" fill="none" stroke="#A65353" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 311.7 75.3 Q 311.0 50.8 312.1 26.5" fill="none" stroke="#A65353" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 312.6 76.2 Q 312.5 51.5 312.7 25.9" fill="none" stroke="#A65353" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <text x="367.0" y="48" font-size="13" fill="#A65353" font-weight="600" text-anchor="middle">点积 Q·Kᵀ</text>
+  <text x="367.0" y="66" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">4×4</text>
+  <path d="M 425.8 50.6 Q 440.6 50.9 455.3 50.7" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 448.6 53.9 L 455.0 51.0 L 448.6 48.1" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 458.6 27.8 Q 534.4 26.4 609.4 28.3" fill="none" stroke="#9E7A36" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 458.2 28.5 Q 533.5 29.7 609.6 27.4" fill="none" stroke="#9E7A36" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 607.9 26.8 Q 608.7 50.7 608.1 75.7" fill="none" stroke="#9E7A36" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 608.9 25.9 Q 608.3 51.0 608.0 75.7" fill="none" stroke="#9E7A36" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 609.3 74.2 Q 533.7 72.4 458.7 74.2" fill="none" stroke="#9E7A36" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 609.9 73.8 Q 534.2 75.2 458.9 74.0" fill="none" stroke="#9E7A36" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 460.3 75.7 Q 459.3 51.5 460.0 26.7" fill="none" stroke="#9E7A36" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 459.1 74.6 Q 459.8 50.3 460.0 27.4" fill="none" stroke="#9E7A36" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <text x="534.0" y="48" font-size="13" fill="#9E7A36" font-weight="600" text-anchor="middle">÷√64 → Softmax</text>
+  <text x="534.0" y="66" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">权重 A (4×4)</text>
+  <path d="M 612.4 50.8 Q 626.8 51.0 641.0 51.3" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 634.6 53.9 L 641.0 51.0 L 634.6 48.1" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 644.7 28.2 Q 693.2 29.3 741.3 28.1" fill="none" stroke="#78577A" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 643.9 27.6 Q 693.5 27.1 742.0 27.3" fill="none" stroke="#78577A" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 739.9 27.0 Q 740.5 50.5 739.6 75.2" fill="none" stroke="#78577A" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 739.5 27.2 Q 739.2 51.1 739.8 76.2" fill="none" stroke="#78577A" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 741.2 74.4 Q 692.7 75.3 644.5 74.1" fill="none" stroke="#78577A" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 741.9 74.3 Q 692.7 73.5 643.9 74.8" fill="none" stroke="#78577A" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 646.1 75.4 Q 645.0 51.6 646.0 26.3" fill="none" stroke="#78577A" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 645.6 75.4 Q 646.0 51.3 646.7 26.0" fill="none" stroke="#78577A" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <text x="693.0" y="48" font-size="13" fill="#78577A" font-weight="600" text-anchor="middle">乘以 V</text>
+  <text x="693.0" y="66" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">4×64</text>
+  <path d="M 744.3 51.2 Q 758.6 50.9 772.6 50.9" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M 766.6 53.9 L 773.0 51.0 L 766.6 48.1" fill="none" stroke="#2B2926" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 776.4 27.8 Q 826.5 26.5 875.7 27.7" fill="none" stroke="#547A4B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 777.0 27.9 Q 825.5 28.9 875.8 28.4" fill="none" stroke="#547A4B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 874.0 26.4 Q 873.8 51.2 874.1 75.4" fill="none" stroke="#547A4B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 874.0 25.8 Q 874.6 50.4 873.8 75.7" fill="none" stroke="#547A4B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 875.7 73.9 Q 826.1 72.6 776.2 74.0" fill="none" stroke="#547A4B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 875.3 74.7 Q 825.5 74.5 776.3 73.2" fill="none" stroke="#547A4B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <path d="M 778.1 75.4 Q 778.4 51.1 778.0 26.6" fill="none" stroke="#547A4B" stroke-width="1.4" stroke-linecap="round"/>
+  <path d="M 777.9 74.6 Q 778.1 50.8 778.5 25.9" fill="none" stroke="#547A4B" stroke-width="0.91" stroke-linecap="round" opacity="0.55"/>
+  <text x="826.0" y="48" font-size="13" fill="#547A4B" font-weight="600" text-anchor="middle">输出 Z</text>
+  <text x="826.0" y="66" font-size="11.5" fill="#6B655D" font-weight="400" text-anchor="middle" class="mono">4×64</text>
+  <text x="174" y="114" font-size="14" fill="#2B2926" font-weight="600" text-anchor="middle">注意力权重 A（每行和 = 1）</text>
+  <text x="93.0" y="136" font-size="13" fill="#6B655D" font-weight="600" text-anchor="middle">我</text>
+  <text x="147.0" y="136" font-size="13" fill="#6B655D" font-weight="600" text-anchor="middle">喝</text>
+  <text x="201.0" y="136" font-size="13" fill="#6B655D" font-weight="600" text-anchor="middle">红</text>
+  <text x="255.0" y="136" font-size="13" fill="#6B655D" font-weight="600" text-anchor="middle">茶</text>
+  <text x="50" y="167" font-size="13" fill="#6B655D" font-weight="600" text-anchor="middle">我</text>
+  <rect x="66" y="146" width="54" height="32" fill="rgba(42, 111, 127, 0.25)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="93.0" y="167" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.56</text>
+  <rect x="120" y="146" width="54" height="32" fill="rgba(42, 111, 127, 0.10)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="147.0" y="167" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.21</text>
+  <rect x="174" y="146" width="54" height="32" fill="rgba(42, 111, 127, 0.05)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="201.0" y="167" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.10</text>
+  <rect x="228" y="146" width="54" height="32" fill="rgba(42, 111, 127, 0.06)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="255.0" y="167" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.13</text>
+  <text x="304" y="167" font-size="11" fill="#948C82" font-weight="400" text-anchor="middle" class="mono">Σ=1</text>
+  <text x="50" y="199" font-size="13" fill="#6B655D" font-weight="600" text-anchor="middle">喝</text>
+  <rect x="66" y="178" width="54" height="32" fill="rgba(42, 111, 127, 0.10)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="93.0" y="199" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.22</text>
+  <rect x="120" y="178" width="54" height="32" fill="rgba(42, 111, 127, 0.21)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="147.0" y="199" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.46</text>
+  <rect x="174" y="178" width="54" height="32" fill="rgba(42, 111, 127, 0.07)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="201.0" y="199" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.15</text>
+  <rect x="228" y="178" width="54" height="32" fill="rgba(42, 111, 127, 0.08)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="255.0" y="199" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.17</text>
+  <text x="304" y="199" font-size="11" fill="#948C82" font-weight="400" text-anchor="middle" class="mono">Σ=1</text>
+  <text x="50" y="231" font-size="13" fill="#B85D3B" font-weight="600" text-anchor="middle">红</text>
+  <rect x="66" y="210" width="54" height="32" fill="rgba(184, 93, 59, 0.05)" stroke="#B85D3B" stroke-width="1.4"/>
+  <text x="93.0" y="231" font-size="12" fill="#2B2926" font-weight="600" text-anchor="middle" class="mono">0.08</text>
+  <rect x="120" y="210" width="54" height="32" fill="rgba(184, 93, 59, 0.03)" stroke="#B85D3B" stroke-width="1.4"/>
+  <text x="147.0" y="231" font-size="12" fill="#2B2926" font-weight="600" text-anchor="middle" class="mono">0.03</text>
+  <rect x="174" y="210" width="54" height="32" fill="rgba(184, 93, 59, 0.22)" stroke="#B85D3B" stroke-width="1.4"/>
+  <text x="201.0" y="231" font-size="12" fill="#B85D3B" font-weight="600" text-anchor="middle" class="mono">0.34</text>
+  <rect x="228" y="210" width="54" height="32" fill="rgba(184, 93, 59, 0.36)" stroke="#B85D3B" stroke-width="1.4"/>
+  <text x="255.0" y="231" font-size="12" fill="#B85D3B" font-weight="600" text-anchor="middle" class="mono">0.55</text>
+  <text x="304" y="231" font-size="11" fill="#948C82" font-weight="400" text-anchor="middle" class="mono">Σ=1</text>
+  <text x="50" y="263" font-size="13" fill="#6B655D" font-weight="600" text-anchor="middle">茶</text>
+  <rect x="66" y="242" width="54" height="32" fill="rgba(42, 111, 127, 0.03)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="93.0" y="263" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.06</text>
+  <rect x="120" y="242" width="54" height="32" fill="rgba(42, 111, 127, 0.02)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="147.0" y="263" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.05</text>
+  <rect x="174" y="242" width="54" height="32" fill="rgba(42, 111, 127, 0.19)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="201.0" y="263" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.41</text>
+  <rect x="228" y="242" width="54" height="32" fill="rgba(42, 111, 127, 0.22)" stroke="#D0C9BE" stroke-width="0.7"/>
+  <text x="255.0" y="263" font-size="12" fill="#2B2926" font-weight="400" text-anchor="middle" class="mono">0.48</text>
+  <text x="304" y="263" font-size="11" fill="#948C82" font-weight="400" text-anchor="middle" class="mono">Σ=1</text>
+  <text x="174" y="298" font-size="12" fill="#948C82" font-weight="400" text-anchor="middle">行 = 查询 (Q)，列 = 被查 (K)</text>
+  <text x="616" y="114" font-size="14.5" fill="#B85D3B" font-weight="600" text-anchor="middle">展开「红」行的加权和：z_红 = A[红] · V</text>
+  <text x="616" y="158" font-size="14" fill="#2B2926" font-weight="500" text-anchor="middle">z_红  =  0.08·v_我  +  0.03·v_喝  +  0.34·v_红  +  0.55·v_茶</text>
+  <rect x="392.0" y="186" width="36.5" height="26" fill="rgba(42, 111, 127, 0.22)" stroke="#2B2926" stroke-width="1.0"/>
+  <text x="410.24" y="204" font-size="12" fill="#2B2926" font-weight="600" text-anchor="middle">我 8%</text>
+  <rect x="428.5" y="186" width="13.7" height="26" fill="rgba(148, 140, 130, 0.18)" stroke="#2B2926" stroke-width="1.0"/>
+  <rect x="442.2" y="186" width="155.0" height="26" fill="rgba(184, 93, 59, 0.25)" stroke="#2B2926" stroke-width="1.0"/>
+  <text x="519.6800000000001" y="204" font-size="12" fill="#2B2926" font-weight="600" text-anchor="middle">红 34%</text>
+  <rect x="597.2" y="186" width="250.8" height="26" fill="rgba(184, 93, 59, 0.52)" stroke="#2B2926" stroke-width="1.0"/>
+  <text x="722.6" y="204" font-size="12" fill="#2B2926" font-weight="600" text-anchor="middle">茶 55%</text>
+  <text x="620" y="240" font-size="13" fill="#B85D3B" font-weight="500" text-anchor="middle">超过一半语义来自「茶」→ 向量指向「红茶 (black)」而非字面「红色 (red)」</text>
+  <path d="M 392.0 267.7 Q 620.0 270.8 847.9 267.9" fill="none" stroke="#948C82" stroke-width="0.9" stroke-linecap="round" stroke-dasharray="4,4"/>
+  <text x="392" y="294" font-size="13.5" fill="#9E7A36" font-weight="600" text-anchor="start">为何除以 √d_k（此处为 √64 = 8）：</text>
+  <text x="392" y="318" font-size="12.5" fill="#6B655D" font-weight="400" text-anchor="start">d_k 维独立点积方差为 d_k；数值过大会将 Softmax 推入梯度趋近 0 的饱和区。</text>
+  <text x="392" y="340" font-size="12.5" fill="#6B655D" font-weight="400" text-anchor="start">除以 √d_k 将点积方差拉回 1，保持梯度稳定。</text>
+</svg>

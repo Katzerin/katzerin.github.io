@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>理解熵：从编码长度到交叉熵与最大熵 | Katzes Blog</title>
+  <meta name="description" content="从「平均最少需要多少个比特传递一个随机结果」出发，梳理信息熵、交叉熵、KL 散度与最大/最小熵原理之间的数学联系。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解熵：从编码长度到交叉熵与最大熵">
+<meta property="og:url" content="https://katzerin.github.io/understanding-entropy/">
+<meta property="og:site_name" content="Katzes Blog">
+<meta property="og:description" content="从「平均最少需要多少个比特传递一个随机结果」出发，梳理信息熵、交叉熵、KL 散度与最大/最小熵原理之间的数学联系。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Katze">
+<meta name="twitter:card" content="summary">
+  <link rel="icon" href="/images/logo.svg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-gb-web@latest/lxgwwenkaigb-regular/result.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-gb-web@latest/lxgwwenkaigb-medium/result.css">
+  <link rel="stylesheet" href="/css/style.css?v=20260814-3">
+  <link rel="stylesheet" href="/css/math.css">
+  <style>
+    .post-content img[src$=".svg"] {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.5em auto;
+    }
+    :root[data-theme="dark"] .post-content img[src$=".svg"] {
+      filter: invert(0.88) hue-rotate(180deg);
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('warmpaper-theme');
+        if (saved === 'dark' || saved === 'light') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']]
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+  <div class="header-inner">
+    <a class="site-title" href="/"><img class="site-logo" src="/images/logo.svg" alt="Logo">Katzes Blog</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <nav class="site-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/archives">Archive</a>
+        <a class="nav-link" href="/musik">Musik</a>
+        <a class="nav-link" href="/about">About</a>
+      <button class="theme-toggle" type="button" aria-label="切换主题" title="切换主题" data-theme-state="light">
+        <svg class="icon-sun" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <svg class="icon-moon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+    <main class="main-content">
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">理解熵：从编码长度到交叉熵与最大熵</h1>
+  </header>
+
+  <div class="post-body-wrapper">
+    <div class="post-content">
+<p>想把「熵」真正理顺，最稳妥的入口不是「混乱度」，而是编码代价：<strong>要把一个随机变量的结果准确传出去，平均最少需要多少个 0/1 比特？</strong></p>
+
+<p>用一个四状态的例子贯穿全篇：假设某地每天只有四种天气，概率分布为 \(p = (\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{8})\)，分别对应 <strong>晴、云、雨、雪</strong>。每天用一串二进制码把当天的天气发出去，看这套编码最少要花多少位。</p>
+
+<hr>
+
+<h2>编码长度与 \(-\log_2 p\)</h2>
+
+<p>如果不考虑概率分布，四种状态一律用 2 位等长编码（<code>00</code>、<code>01</code>、<code>10</code>、<code>11</code>），每天固定开销 \(2\) bit。但高频的晴天占了一半，给它分配 2 bit 显然有压缩空间。</p>
+
+<p>改用变长<strong>前缀码</strong>（任意码字都不是其他码字的前缀，接收端读到就能立刻切分）：</p>
+
+<ul>
+<li>晴（\(1/2\)）→ <code>0</code>（1 bit）</li>
+<li>云（\(1/4\)）→ <code>10</code>（2 bit）</li>
+<li>雨（\(1/8\)）→ <code>110</code>（3 bit）</li>
+<li>雪（\(1/8\)）→ <code>111</code>（3 bit）</li>
+</ul>
+
+<p>此时每天的平均码长降为：</p>
+
+<p>\[\frac{1}{2}\times 1 + \frac{1}{4}\times 2 + \frac{1}{8}\times 3 + \frac{1}{8}\times 3 = 1.75\text{ bits}\]</p>
+
+<p><img src="/images/entropy/01-coding-tree.svg" alt="等长编码与前缀码树"></p>
+
+<p>把前缀码画成二叉树，能直接看到码长和概率的关系：路径每往下走一层，码长加 \(1\)，它占掉的编码空间就缩小一半。一个长度为 \(\ell_i\) 的叶子节点，会占据总编码空间的 \(2^{-\ell_i}\)（其下的子树不能再分配给其他符号）。</p>
+
+<p>为了让所有码字互不冲突，占用空间之和不能超过 \(1\)，即 <strong>Kraft 不等式</strong>：</p>
+
+<p>\[\sum_i 2^{-\ell_i} \le 1\]</p>
+
+<p>如果令 \(q_i = 2^{-\ell_i}\)，就能反过来看到一件关键的事：<strong>每一套不浪费空间的前缀编码，本质上都等价于指定了一个概率分布 \(q\)</strong>，码长与概率的对应关系就是：</p>
+
+<p>\[\ell_i = -\log_2 q_i\]</p>
+
+<p>至于为什么形式上必须是 \(\log\)，看独立事件的组合性质就够了：两个独立事件同时发生，联合概率相乘 \(p(x,y) = p(x)p(y)\)，但传输两个结果所需的比特数应当相加 \(I(x,y) = I(x) + I(y)\)。满足把乘法变为加法的连续函数只有对数；取负号只是因为 \(p \in (0, 1]\) 时 \(\log p \le 0\)，翻正后才对应非负长度。</p>
+
+<p>当编码分配的分布恰好等于真实分布 \(p\) 时，单个事件的理想码长（<strong>自信息</strong>）是 \(-\log_2 p_i\)，期望码长就是<strong>信息熵</strong>：</p>
+
+<p>\[H(p) = \sum_i p_i \left(-\log_2 p_i\right) = -\sum_i p_i \log_2 p_i\]</p>
+
+<p>底数取 \(2\) 时单位是 <code>bit</code>，取自然对数 \(e\) 时单位是 <code>nat</code>，两者只差一个常数倍，不影响任何结论。</p>
+
+<hr>
+
+<h2>不确定性与信息获取</h2>
+
+<p>拿最简单的二元分布（概率为 \(p\) 和 \(1-p\)）画出 \(H(p) = -p\log_2 p - (1-p)\log_2(1-p)\)，是一条严格上凸的曲线：</p>
+
+<p><img src="/images/entropy/02-binary-entropy.svg" alt="二元熵曲线与分布对比"></p>
+
+<ul>
+<li>\(p = 0\) 或 \(p = 1\) 时，\(H(p) = 0\)：结果已经确定，不需要传递任何比特。</li>
+<li>\(p = 0.5\) 时，\(H(p) = 1\)：不确定性最大，单次观测正好将可能性减半。</li>
+</ul>
+
+<p>3Blue1Brown 分析 Wordle 时用的就是这个视角：选开局词的目标不是赌中答案，而是让反馈颜色在剩余词库上的分布尽量均匀、熵尽量大。因为<strong>熵既衡量观测前的不确定性，也衡量一次观测平均能消除多少不确定性</strong>——分布越扁平，未知程度越高，拿到观测结果后获得的信息量也就越大。</p>
+
+<hr>
+
+<h2>交叉熵与 KL 散度</h2>
+
+<p>前面的 \(1.75\) bit 是已知真实分布 \(p\) 时的理论下界。实际建模时拿不到 \(p\)，只能依据模型估计出的分布 \(q\) 来设计编码（给第 \(i\) 个事件分配 \(-\log_2 q_i\) 位）。数据依然按真实分布 \(p\) 产生，但用 \(q\) 的码本去编码，平均码长就是<strong>交叉熵</strong>：</p>
+
+<p>\[H(p, q) = -\sum_i p_i \log_2 q_i\]</p>
+
+<p>回到天气的例子，对比三种模型假设：</p>
+
+<ul>
+<li><strong>理想模型</strong> \(q = p\)：平均开销 \(1.75\) bit，达到下界。</li>
+<li><strong>均匀假设</strong> \(q_{\text{unif}} = (\frac{1}{4}, \frac{1}{4}, \frac{1}{4}, \frac{1}{4})\)：全员 2 bit，平均开销 \(2.00\) bit，多出 \(0.25\) bit。</li>
+<li><strong>错误假设</strong> \(q_{\text{bad}} = (\frac{1}{8}, \frac{1}{4}, \frac{1}{8}, \frac{1}{2})\)：把晴天和雪天的概率猜反，占一半天数的晴天每次都要花 3 bit，平均开销升到 \(2.50\) bit，多出 \(0.75\) bit。</li>
+</ul>
+
+<p><img src="/images/entropy/03-cross-entropy-kl.svg" alt="交叉熵与 KL 散度拆解"></p>
+
+<p>由吉布斯不等式可知 \(H(p, q) \ge H(p)\)，等号当且仅当 \(q = p\) 时成立。因为分布估计偏差而多出来的那部分比特开销，就是 <strong>KL 散度（相对熵）</strong>：</p>
+
+<p>\[D_{\text{KL}}(p \| q) = H(p, q) - H(p) = \sum_i p_i \log_2 \frac{p_i}{q_i} \ge 0\]</p>
+
+<p>这个分解直接解释了机器学习里的两个核心现象：</p>
+
+<ol>
+<li><strong>交叉熵损失的本质</strong>：训练时真实数据分布 \(p\) 固定，\(H(p)\) 是常数，最小化交叉熵 \(H(p, q)\) 在优化上完全等价于最小化 \(D_{\text{KL}}(p \| q)\)。语言模型做 Next-Token Prediction 时最小化 \(-\log q(x_t \mid x_{&lt;t})\)，本质上就是在逼近真实语料的分布 \(p\)，同时将语料的平均编码长度压向理论下界 \(H(p)\)。</li>
+<li><strong>KL 散度的不对称性</strong>：\(D_{\text{KL}}(p \| q)\) 的求和权重是 \(p_i\)。若真实高频事件（\(p_i\) 较大）被模型赋予极低概率（\(q_i \to 0\)），\(-\log q_i\) 会趋于无穷大；反之，对 \(p_i \approx 0\) 的区域多分配一些概率，惩罚很轻。因此最小化 \(D_{\text{KL}}(p \| q)\) 倾向于覆盖真实分布的所有支撑集（mode-covering），而反向的 \(D_{\text{KL}}(q \| p)\) 则倾向于紧贴真实分布的某一个主峰（mode-seeking），避免在无样本区域分配概率。</li>
+</ol>
+
+<hr>
+
+<h2>最大熵与最小熵</h2>
+
+<p>把视角从编码和损失函数再往外扩一步，熵在建模里对应着两个相反方向的原则（科学空间里对这两条线有很系统的梳理）：</p>
+
+<p><img src="/images/entropy/04-maxent-vs-minent.svg" alt="最大熵原理与最小熵原理对照"></p>
+
+<h3>最大熵原理</h3>
+
+<p>当只知道系统的部分约束（例如均值或某些特征的期望固定），满足条件的分布有无数个。最大熵原理主张选择熵最大的那个分布：在严格满足已知约束的前提下，对未知部分保持最大均匀性，不引入任何没有证据的额外假设。</p>
+
+<p>在线性期望约束下，用拉格朗日乘子法最大化 \(-\sum_i p_i \log p_i\)，求导令为零，解出的分布形式必然是指数族：</p>
+
+<p>\[p_i = \frac{e^{z_i}}{\sum_j e^{z_j}}\]</p>
+
+<p>在统计物理中这是<strong>玻尔兹曼分布</strong>，在深度学习中就是 <strong>Softmax</strong>。从这个角度看，Softmax 不只是一个把实数映射为概率的归一化技巧，而是线性约束下的最大熵解。</p>
+
+<h3>最小熵原理</h3>
+
+<p>在无监督学习（如无监督分词、聚类）中，目标正好相反：寻找数据内部隐藏的结构。如果一种切分或归类方案抓住了内在规律，那么给定上下文或类别之后，条件不确定性 \(H(Y \mid X)\) 应当降到最低——分布从分散收敛为清晰的尖峰。</p>
+
+<p>两者的分工很明确：面对未知做推断，用<strong>最大熵</strong>避免过度假设；面对数据找规律，用<strong>最小熵</strong>提取确定结构。</p>
+
+<hr>
+
+<h2>小结</h2>
+
+<ul>
+<li><strong>自信息</strong> \(-\log p\)：单个事件对应的理想码长。</li>
+<li><strong>信息熵</strong> \(H(p)\)：真实分布下的最低平均码长。</li>
+<li><strong>交叉熵</strong> \(H(p, q)\)：按估计分布 \(q\) 编码真实分布 \(p\) 的实际平均码长。</li>
+<li><strong>KL 散度</strong> \(D_{\text{KL}}(p \| q)\)：因估计分布 \(q\) 偏离 \(p\) 产生的额外比特开销。</li>
+</ul>
+    </div>
+  </div>
+
+  <footer class="post-footer">
+    <nav class="post-nav">
+        <a class="next" href="/understanding-transformer/">理解 Transformer：从矩阵运算看注意力与解码 &raquo;</a>
+    </nav>
+  </footer>
+</article>
+    </main>
+    <footer class="site-footer">
+  <div class="footer-inner">
+      <p>&copy; 2026 Katze</p>
+    <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &middot; Theme <a href="https://github.com/finch-xu/hexo-theme-warmpaper" target="_blank" rel="noopener">Warmpaper</a></p>
+  </div>
+</footer>
+
+  </div>
+  <script src="/js/main.js?v=20260814-2"></script>
+</body>
+</html>
