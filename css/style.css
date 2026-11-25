@@ -414,7 +414,7 @@ img {
 .musik-header h1 {
   margin-bottom: 0.35rem;
   font-family: var(--font-serif);
-  font-size: 1.4rem;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.35;
 }
@@ -1439,7 +1439,7 @@ figure.highlight .token.deleted {
 
 .archive-title {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 2rem;
   text-align: center;
